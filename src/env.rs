@@ -1,6 +1,6 @@
 pub fn required_string(key:&str) -> String {
     let msg = format!("{} environment variable must be defined", key);
-    std::env::var(key).expect(&msg);
+    std::env::var(key).expect(&msg)
 }
 
 pub fn required_u16(key:&str) -> u16 {
