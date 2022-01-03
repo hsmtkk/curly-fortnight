@@ -1,7 +1,7 @@
 mod env;
 
 use axum::{
-    routing::get,
+    routing::get, routing::post,
     Router,
 };
 use tracing::{event, span, Level};
@@ -23,6 +23,7 @@ async fn main() {
     let app = Router::new()
     .route("/", get(|| async { "Hello, World!" }))
     .route("/callback", get(callback))
+    .route("/callback", post(callback))
     .layer(ServiceBuilder::new().layer(TraceLayer::new_for_http()));
 
     // run it with hyper on localhost:3000
