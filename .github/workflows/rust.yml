@@ -7,8 +7,8 @@ jobs:
   rust:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: test
-      run: cargo test
-    - name: clippy
-      run: cargo clippy
+      - uses: actions/checkout@v2
+      - name: test
+        run: cargo test
+      - name: clippy
+        run: cargo clippy
