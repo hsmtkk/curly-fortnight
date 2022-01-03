@@ -8,5 +8,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: hadolint/hadolint-action@v1.6.0
         with:
-          dockerfile: Dockerfile
+          dockerfile: local.Dockerfile
+          ignore: DL3006
+      - uses: hadolint/hadolint-action@v1.6.0
+        with:
+          dockerfile: heroku.Dockerfile
           ignore: DL3006
